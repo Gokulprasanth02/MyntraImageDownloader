@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:#2c3e50; 
+}
+
+.container {
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.logo-container {
+    margin-right: 20px;
+    text-align: center;
+}
+.logo-text {
+    font-size: 18px;
+    font-family:system-ui;
+    line-height: 1.2;
+    background-color: #4caf50; 
+    padding: 15px; 
+    border-radius: 8px; 
+    font-weight: bold;
+}
+
+.logo-text span {
+    display: block;
+    margin-bottom: 5px;
+    padding-right: 5px; 
+    animation: scale 1s ease-in-out infinite;
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.logo {
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #4caf50;
+    overflow: hidden; 
+}
+
+.form-container {
+    width: 500px;
+    text-align: center;
+    padding: 40px;
+    border-radius: 8px;
+    background-image: url('image/p-1.avif'); 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'poppins', sans-serif;
+    font-size: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+ /*   border: 1px solid #ccc; 
+    border-radius: 4px;*/
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; 
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#submitButton {
+    background-color: #2196F3;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 8px;
+}
+.custom-label {
+    background-color: rgba(34, 29, 29, 0.5); 
+    color:#ff004f; 
+    padding: 3px; 
+    border-radius: 4px; 
+}
+
+#progressBar {
+    width: 0;
+    height: 20px;
+    background-color: #4CAF50;
+    margin-top: 10px;
+    transition: width 0.3s;
+}

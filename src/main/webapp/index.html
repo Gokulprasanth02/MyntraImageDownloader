@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Image Downloader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-text">
+            <span>T</span>
+            <span>H</span>
+            <span>E</span>
+            <br>
+            <span>I</span>
+            <span>N</span>
+            <span>D</span>
+            <span>I</span>
+            <span>A</span>
+            <span>N</span>
+            <br>
+            <span>G</span>
+            <span>A</span>
+            <span>R</span>
+            <span>A</span>
+            <span>G</span>
+            <span>E</span>
+            <br>
+            <span>A</span>
+            <span>N</span>
+            <span>D</span>
+            <br>
+            <span>C</span>
+            <span>O</span>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="input-group">
+            <label class="custom-label" for="url">URL:</label>
+            <input type="text" id="url" placeholder="https://www.myntra.com/" value="https://www.myntra.com/" disabled>
+            <ul id="homePageUrlHistory"></ul>
+        </div>
+
+        <div class="input-group">
+            <label class="custom-label" for="itemCodeFilePath">Item Code Path:</label>
+           <!-- <input type="text" id="itemCodeFilePath" placeholder="Select The File Path For The Input Item Code">-->
+            <input type="file" id="fileInput" accept=".csv">
+            <!--<button onclick="document.getElementById('itemCodeFileUpload').click()">Browse</button>-->
+            <ul id="itemCodeFilePathHistory"></ul>
+        </div>
+        
+        <div>
+            <button id="submitButton">Submit</button>
+            <p id="downloadStatus"></label>
+        </div>
+        <div id="progressBar"></div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
