@@ -90,36 +90,29 @@
         <url>https://repo.maven.apache.org/maven2</url>
     </repository>
 </repositories>
-  <build>
+<build>
     <plugins>
-		 <plugin>
+        <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.1</version> <!-- Use a version compatible with your Java version -->
+            <version>3.8.1</version>
             <configuration>
-                <source>1.8</source> <!-- Set the source version based on your Java version -->
-                <target>1.8</target> <!-- Set the target version based on your Java version -->
-                <!--<release>8</release> --><!-- Use the appropriate release version -->
+                <source>1.8</source>
+                <target>1.8</target>
             </configuration>
         </plugin>
-     <!-- <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <release>17</release>
-        </configuration>
-      </plugin>-->
-      <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.3</version>
-          <configuration>
-          <archive>
-             <manifestFile>src/main/webapp/META-INF/MANIFEST.MF</manifestFile>
-          </archive>
-          </configuration>
-          <!-- Other configurations for the war plugin -->
-      </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.2.3</version>
+            <configuration>
+                <archive>
+                    <manifestEntries>
+                        <Class-Path>WEB-INF/classes/</Class-Path>
+                    </manifestEntries>
+                </archive>
+            </configuration>
+        </plugin>
     </plugins>
-  </build>
+</build>
 </project>
