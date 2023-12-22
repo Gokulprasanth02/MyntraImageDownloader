@@ -109,6 +109,7 @@
                         <Class-Path>WEB-INF/classes/</Class-Path>
                     </manifestEntries>
                 </archive>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
             </configuration>
         </plugin>
     </plugins>
