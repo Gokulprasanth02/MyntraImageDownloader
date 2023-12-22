@@ -109,10 +109,12 @@
           <release>17</release>
         </configuration>
       </plugin>-->
-     <!-- <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.2.3</version>
-      </plugin>-->
+      <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
+                <!-- Other configurations for the war plugin -->
+            </plugin>
     </plugins>
   </build>
 </project>
