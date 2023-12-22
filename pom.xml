@@ -32,7 +32,7 @@
     <groupId>io.github.bonigarcia</groupId>
     <artifactId>webdrivermanager</artifactId>
     <version>5.6.2</version>
-     <!--<scope>test</scope>-->
+   <!-- <scope>test</scope>-->
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
@@ -60,19 +60,33 @@
   
     <!-- Add other dependencies as needed -->
 </dependencies>
+<!--<properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+</properties>-->
   <build>
     <plugins>
-      <plugin>
+		 <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.2</version> <!-- Use a version compatible with your Java version -->
+            <configuration>
+                <source>1.8</source> <!-- Set the source version based on your Java version -->
+                <target>1.8</target> <!-- Set the target version based on your Java version -->
+                <release>8</release> <!-- Use the appropriate release version -->
+            </configuration>
+        </plugin>
+     <!-- <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
           <release>17</release>
         </configuration>
-      </plugin>
-      <plugin>
+      </plugin>-->
+     <!-- <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.3</version>
-      </plugin>
+      </plugin>-->
     </plugins>
   </build>
 </project>
