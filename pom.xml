@@ -64,12 +64,18 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 </properties>-->
+<repositories>
+    <repository>
+        <id>central</id>
+        <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+</repositories>
   <build>
     <plugins>
 		 <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.2</version> <!-- Use a version compatible with your Java version -->
+            <version>3.8.4</version> <!-- Use a version compatible with your Java version -->
             <configuration>
                 <source>1.8</source> <!-- Set the source version based on your Java version -->
                 <target>1.8</target> <!-- Set the target version based on your Java version -->
