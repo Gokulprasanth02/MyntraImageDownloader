@@ -110,16 +110,16 @@
         </configuration>
       </plugin>-->
       <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.3</version>
-                <configuration>
-                <archive>
-                    <manifestFile>src/main/webapp/META-INF/MANIFEST.MF</manifestFile>
-                </archive>
-            </configuration>
-                <!-- Other configurations for the war plugin -->
-            </plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.3</version>
+          <configuration>
+          <archive>
+             <manifestFile>src/main/webapp/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+          </configuration>
+          <!-- Other configurations for the war plugin -->
+      </plugin>
     </plugins>
   </build>
 </project>
