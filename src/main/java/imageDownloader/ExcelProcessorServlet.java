@@ -174,7 +174,8 @@ public class ExcelProcessorServlet extends HttpServlet {
 					
 					driver.navigate().to(homePageUrl + itemCode);
 					driver.manage().window().maximize();
-					WebDriverWait wait = new WebDriverWait(driver, 10);
+					WebDriverWait wait = new WebDriverWait(driver, 3600);
+					System.out.println("Waiting for element to click...");
 					WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".image-grid-col50")));					
 //					WebDriverWait wait = new WebDriverWait(driver, 10); // Adjust the timeout as needed
 //					WebElement gridElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".image-grid-col50")));
