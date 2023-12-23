@@ -22,10 +22,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -163,6 +165,9 @@ public class ExcelProcessorServlet extends HttpServlet {
 			itemCodeList.forEach(itemCode -> {
 				try {
 					 WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
+					 ChromeOptions options = new ChromeOptions();
+					 options.addArguments("--headless");
+//					 options.setBinary(System.getenv("GOOGLE_CHROME_SHIM"));
 				        WebDriver driver = new ChromeDriver();
 					List<String> imagesList = new ArrayList<>();
 					
@@ -199,7 +204,7 @@ public class ExcelProcessorServlet extends HttpServlet {
 
 						// Create the directory and its parents if they do not exist
 						Files.createDirectories(directory.toPath());
-//						System.out.println("Directory created successfully: " + directory.getPath());
+						System.out.println("Directory created successfully: " + directory.getPath());
 
 						int count = 1;
 						for (String image : imagesList) {
