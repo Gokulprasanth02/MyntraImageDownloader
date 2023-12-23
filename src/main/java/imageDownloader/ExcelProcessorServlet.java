@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import org.apache.catalina.connector.RequestFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -44,7 +45,7 @@ public class ExcelProcessorServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type");
         response.setCharacterEncoding("UTF-8");
-
+        ((RequestFacade) request).getAsyncContext().setTimeout(60000); // Set timeout to 60 seconds
         try {
             String homePageUrl = getHomePageUrl(request);
          // Get the Part representing the file upload
@@ -174,7 +175,7 @@ public class ExcelProcessorServlet extends HttpServlet {
 					
 					driver.navigate().to(homePageUrl + itemCode);
 					driver.manage().window().maximize();
-					WebDriverWait wait = new WebDriverWait(driver, 3600);
+					WebDriverWait wait = new WebDriverWait(driver, 60000);
 					System.out.println("Waiting for element to click...");
 					WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".image-grid-col50")));					
 //					WebDriverWait wait = new WebDriverWait(driver, 10); // Adjust the timeout as needed
