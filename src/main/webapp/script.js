@@ -15,7 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
       /*  formData.append("itemCodeFilePath", itemCodeFilePath);*/
         formData.append("file", file);
 
-        fetch('/MyntraImageDownloader/processExcel', {
+        // Use window.location to get the base URL
+		const baseUrl = window.location.href;
+
+		fetch(`${baseUrl}/processExcel`, {
             method: 'POST',
             enctype: 'multipart/form-data',
             body: formData,
