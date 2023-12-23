@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       /*  formData.append("itemCodeFilePath", itemCodeFilePath);*/
         formData.append("file", file);
 
-        fetch('/ImageDownloaderWebProject/processExcel', {
+        fetch('/MyntraImageDownloader/processExcel', {
             method: 'POST',
             enctype: 'multipart/form-data',
             body: formData,
