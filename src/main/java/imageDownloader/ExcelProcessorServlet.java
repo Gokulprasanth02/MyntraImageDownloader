@@ -174,8 +174,10 @@ public class ExcelProcessorServlet extends HttpServlet {
 					
 					driver.navigate().to(homePageUrl + itemCode);
 					driver.manage().window().maximize();
-					WebDriverWait wait = new WebDriverWait(driver, 10); // Adjust the timeout as needed
-					WebElement gridElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".image-grid-col50")));
+					WebDriverWait wait = new WebDriverWait(driver, 10);
+					WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".image-grid-col50")));					
+//					WebDriverWait wait = new WebDriverWait(driver, 10); // Adjust the timeout as needed
+//					WebElement gridElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".image-grid-col50")));
 //					driver.findElement(By.className("image-grid-col50")).click();	
 					gridElement.click();
 					driver.findElement(By.className("desktop-image-zoom-thumbnail-button")).click();
