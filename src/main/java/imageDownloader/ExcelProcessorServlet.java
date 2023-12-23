@@ -22,13 +22,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
@@ -173,7 +174,10 @@ public class ExcelProcessorServlet extends HttpServlet {
 					
 					driver.navigate().to(homePageUrl + itemCode);
 					driver.manage().window().maximize();
-					driver.findElement(By.className("image-grid-col50")).click();
+					WebDriverWait wait = new WebDriverWait(driver, 10); // Adjust the timeout as needed
+					WebElement gridElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".image-grid-col50")));
+//					driver.findElement(By.className("image-grid-col50")).click();	
+					gridElement.click();
 					driver.findElement(By.className("desktop-image-zoom-thumbnail-button")).click();
 					List<WebElement> buttonList = driver
 							.findElements(By.className("desktop-image-zoom-thumbnail-button"));
